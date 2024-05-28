@@ -1,0 +1,13 @@
+title: "Blog of Perfumes"
+email: "belhajweb.contact@gmail.com"
+description: "Un blog dédié aux parfums."
+baseurl: "/Blog-of-perfumes" 
+url: "https://tarikBelhaj.github.io" # l'URL de base de votre site
+twitter_username: yourusername
+github_username: tarikBelhaj
+
+# Paramètres de build
+theme: minima
+plugins:
+  - jekyll-feed
+
