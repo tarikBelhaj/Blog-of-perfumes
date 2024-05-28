@@ -5,22 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - Blog of Perfumes</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/about' | relative_url }}">About</a></li>
-        <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="branding"><a href="{{ '/' | relative_url }}">Blog of Perfumes</a></h1>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/shop' | relative_url }}">Shop</a></li>
+          <li><a href="{{ '/pages' | relative_url }}">Pages</a></li>
+          <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/signin' | relative_url }}">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main>
-    {{ content }}
+  <main class="site-content">
+    <div class="container">
+      {{ content }}
+    </div>
   </main>
-  <footer>
-    <p>&copy; 2024 Blog of Perfumes. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Blog of Perfumes. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
