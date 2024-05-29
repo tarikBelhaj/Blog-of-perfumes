@@ -1,10 +1,14 @@
+---
+layout: default
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Blog of Perfumes</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     <header>
@@ -12,11 +16,11 @@
             <h1>Blog of Perfumes</h1>
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/shop">Shop</a></li>
-                    <li><a href="/pages">Pages</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/signin">Sign In</a></li>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/shop' | relative_url }}">Shop</a></li>
+                    <li><a href="{{ '/pages' | relative_url }}">Pages</a></li>
+                    <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                    <li><a href="{{ '/signin' | relative_url }}">Sign In</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,9 +32,9 @@
                 <div class="articles-container">
                     {% for post in site.posts %}
                     <div class="article">
-                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                         <p>{{ post.excerpt }}</p>
-                        <p><a href="{{ post.url }}">Read More</a></p>
+                        <p><a href="{{ post.url | relative_url }}">Read More</a></p>
                     </div>
                     {% endfor %}
                 </div>
@@ -38,9 +42,4 @@
         </div>
     </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Blog of Perfumes. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+        <div class="

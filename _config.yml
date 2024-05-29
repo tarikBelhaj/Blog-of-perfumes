@@ -10,3 +10,12 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+# Exclude from build
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - generate_post.py
+  - posts_blog_1
