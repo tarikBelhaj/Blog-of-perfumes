@@ -6,7 +6,7 @@ url: "https://tarikBelhaj.github.io"
 github_username: tarikBelhaj
 
 # Paramètres de build
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
