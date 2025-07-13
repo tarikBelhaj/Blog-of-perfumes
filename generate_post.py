@@ -1,4 +1,4 @@
-import openai
+from openai import OpenAI
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import NewPost
 import schedule
@@ -10,15 +10,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration de l'API OpenAI
-openai.api_key = os.getenv('OPENAI_API_KEY')
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 def generate_blog_post(topic):
-    response = openai.Completion.create(
-        engine="text-davinci-004",
-        prompt=f"Écris un article de blog détaillé sur {topic}.",
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "Tu es un expert en rédaction d'articles de blog sur les parfums."},
+            {"role": "user", "content": f"Écris un article de blog détaillé sur {topic}."}
+        ],
         max_tokens=1000
     )
-    return response.choices[0].text.strip()
+    return response.choices[0].message.content.strip()
 
 # Configuration de la connexion WordPress
 wp = Client(os.getenv('WORDPRESS_URL'), os.getenv('WORDPRESS_USERNAME'), os.getenv('WORDPRESS_PASSWORD'))
