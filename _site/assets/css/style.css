@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.site-header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.site-header .branding a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.site-header .site-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-header .site-nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.site-header .site-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-content {
+  display: flex;
+  margin: 20px 0;
+}
+
+.main-blog {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.main-post, .secondary-posts .post {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.post-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.post-date {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 5px 10px;
+}
+
+.read-more:hover {
+  background: #333;
+  color: #fff;
+}
+
+.site-footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.site-footer .footer-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.site-footer h4 {
+  margin-top: 0;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer ul li {
+  margin: 5px 0;
+}
+
+.gallery-images {
+  display: flex;
+  gap: 10
+}
