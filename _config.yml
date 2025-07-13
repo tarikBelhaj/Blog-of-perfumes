@@ -1,21 +1,68 @@
-title: "Blog of Perfumes"
+title: "Blog des Parfums"
 email: "belhajweb.contact@gmail.com"
-description: "Un blog dédié aux parfums."
+description: "Un blog moderne dédié à l'univers fascinant des parfums, avec critiques, guides et conseils d'experts."
 baseurl: "/Blog-of-perfumes" 
 url: "https://tarikBelhaj.github.io" 
 github_username: tarikBelhaj
 
+# Paramètres SEO et métadonnées
+lang: fr
+timezone: Europe/Paris
+author: "Tarik Belhaj"
+
 # Paramètres de build
 markdown: kramdown
+highlighter: rouge
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Configuration Kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Paramètres de pagination
+paginate: 6
+paginate_path: "/page:num/"
+
+# Collections et permalinks
+permalink: /:categories/:year/:month/:day/:title/
 
 # Exclude from build
-
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - generate_post.py
-  - posts_blog_1
+  - requirements.txt
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Paramètres de développement
+livereload: true
+incremental: true
+
+# Configuration du feed RSS
+feed:
+  path: feed.xml
+
+# Configuration par défaut pour les posts
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tarik Belhaj"
