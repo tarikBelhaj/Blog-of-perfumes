@@ -1,55 +1,34 @@
 ---
 layout: default
-title: "Blog of Perfumes"
+title: "Blog of Perfumes - Accueil"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog of Perfumes</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Blog of Perfumes</h1>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/shop">Shop</a></li>
-                    <li><a href="/pages">Pages</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/signin">Sign In</a></li>
-                </ul>
-            </nav>
+<div class="container">
+    <section class="intro">
+        <h2>Bienvenue sur le Blog des Parfums</h2>
+        <p>Découvrez l'univers fascinant des parfums avec nos guides complets et nos critiques. Restez à l'affût des dernières tendances et conseils dans le monde des fragrances.</p>
+    </section>
+    
+    <section class="articles">
+        <h2>Articles Récents</h2>
+        <div class="articles-container">
+            {% for post in site.posts limit:6 %}
+            <div class="article">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                {% if post.excerpt %}
+                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                {% else %}
+                    <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+                {% endif %}
+                <a href="{{ post.url | relative_url }}" class="read-more">Lire la suite →</a>
+            </div>
+            {% endfor %}
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <section class="intro">
-                <h2>Welcome to the Blog of Perfumes</h2>
-                <p>Discover the world of perfumes with our comprehensive guides and reviews. Stay tuned for the latest trends and tips in the world of fragrances.</p>
-            </section>
-            <section class="articles">
-                <h2>Latest Articles</h2>
-                <div class="articles-container">
-                    {% for post in site.posts %}
-                    <div class="article">
-                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                        <p>{{ post.excerpt }}</p>
-                        <p><a href="{{ post.url }}">Read More</a></p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </section>
+        
+        {% if site.posts.size == 0 %}
+        <div class="no-posts">
+            <p>Aucun article publié pour le moment. Revenez bientôt pour découvrir nos premiers contenus sur les parfums !</p>
         </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Blog of Perfumes. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+        {% endif %}
+    </section>
+</div>

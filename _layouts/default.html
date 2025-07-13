@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>{{ site.title }}</h1>
+            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
             <nav>
                 <ul>
-                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                    <li><a href="{{ '/shop' | relative_url }}">Shop</a></li>
-                    <li><a href="{{ '/pages' | relative_url }}">Pages</a></li>
-                    <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
-                    <li><a href="{{ '/signin' | relative_url }}">Sign In</a></li>
+                    <li><a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Accueil</a></li>
+                    <li><a href="{{ '/blog.html' | relative_url }}" {% if page.url == "/blog.html" %}class="active"{% endif %}>Tous les Articles</a></li>
+                    <li><a href="{{ '/about.html' | relative_url }}" {% if page.url == "/about.html" %}class="active"{% endif %}>À Propos</a></li>
+                    <li><a href="{{ '/contact.html' | relative_url }}" {% if page.url == "/contact.html" %}class="active"{% endif %}>Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -26,7 +27,11 @@
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2024 {{ site.title }}. All rights reserved.</p>
+            <p>&copy; 2024 {{ site.title }}. Tous droits réservés.</p>
+            <p>
+                <a href="mailto:{{ site.email }}">{{ site.email }}</a> | 
+                <a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a>
+            </p>
         </div>
     </footer>
 </body>
