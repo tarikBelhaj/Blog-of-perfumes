@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-<<<<<<< HEAD:Gemfile
 gem "jekyll", "~> 4.2.0"
 gem "minima", "~> 2.5"
 gem "jekyll-feed", "~> 0.12"
@@ -18,9 +17,5 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 # kramdown v2 ships without the gfm parser by default. If you're using
 # kramdown v1, comment out this line.
 gem "kramdown-parser-gfm"
-=======
-gem "jekyll", "~> 4.4.1"
-gem "bundler", "~> 2.4.22"
->>>>>>> origin/cursor/voir-le-rendu-en-ligne-c11c:Gemfile.bak
 
 
