@@ -1,21 +1,73 @@
-title: "Blog of Perfumes"
-email: "belhajweb.contact@gmail.com"
-description: "Un blog dédié aux parfums."
-baseurl: "/Blog-of-perfumes" 
-url: "https://tarikBelhaj.github.io" 
-github_username: tarikBelhaj
+title: "Parfums de Dubaï - Fragrances Orientales de Luxe"
+description: "Découvrez notre collection exclusive de parfums de Dubaï. Fragrances orientales authentiques, oud précieux, et créations unisexes de marques prestigieuses comme Lattafa, Ard Al Zaafaran. Luxe accessible et qualité garantie."
+url: "https://votre-username.github.io"
+baseurl: "/parfums-dubai"
 
-# Paramètres de build
-markdown: kramdown
-theme: minima
+# SEO & Social
+twitter:
+  username: votre_twitter
+  card: summary_large_image
+
+social:
+  name: Parfums de Dubaï
+  links:
+    - https://twitter.com/votre_twitter
+    - https://www.facebook.com/votre_facebook
+    - https://www.instagram.com/votre_instagram
+
+# Collections
+collections:
+  products:
+    output: true
+    permalink: /produits/:name/
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Expert Parfums"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Plugins
 plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-feed
 
-# Exclude from build
+# Markdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
 
+# Timezone
+timezone: Europe/Paris
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Exclude
 exclude:
   - Gemfile
   - Gemfile.lock
-  - README.md
-  - generate_post.py
-  - posts_blog_1
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
